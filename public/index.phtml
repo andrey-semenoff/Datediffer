@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Datediff with pure PHP</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="/public/assets/main.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="jumbotron">
+				  <h1 class="display-4">Datediff with pure PHP</h1>
+				  <p class="lead">This app calculates the difference between two dates</p>
+				  <hr class="my-4">
+
+					<div class="row justify-content-md-center">
+						<div class="col-4">
+						  <!-- form input dates -->
+							<form method="POST" action="/" class="form">
+							  <div class="form-group mb-2">
+							    <label for="date_start">Date start</label>
+							    <input 
+							    	type="date"
+							    	name="date_start"
+							    	class="form-control-plaintext"
+							    	id="date_start"
+							    	value="<?= $_POST['date_start'] ?>">
+							  </div>
+
+							  <div class="form-group mb-2">
+							    <label for="date_end">Date end</label>
+							    <input
+							    	type="date"
+							    	name="date_end"
+							    	class="form-control-plaintext"
+							    	id="date_end"
+							    	value="<?= $_POST['date_end'] ?>">
+							  </div>
+							  <button type="submit" class="btn btn-success mb-2">Get datediff</button>
+							  <button type="reset" class="btn btn-deafult mb-2">Clear</button>
+							</form>
+						</div>
+
+						<div class="col-4">
+							<h5>Result:</h5>
+							<p id="result">
+								<?= $vars['result'] ?>
+							</p>
+						</div>
+
+						<div class="col-4">
+							<button type="button" class="btn btn-primary" id="run_test">Run Test with datediff</button>
+							<p id="test_result"></p>
+						</div>
+					</div>
+				  
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="/public/assets/main.js?<?= time() ?>"></script>
+</body>
+</html>

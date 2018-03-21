@@ -1,0 +1,36 @@
+<?php if ( $vars['data']['status'] ) { 
+	if( $vars['data']['years'] == 0
+			&& $vars['data']['months'] == 0
+			&& $vars['data']['days'] == 0 ) { ?>
+
+		<p class="text-primary">Dates are equals!</p>
+	
+	<?php } else {
+		if( $vars['data']['invert'] ) { ?>
+			<p class="text-danger">
+				Inverted
+			</p>
+		<?php }
+
+		if( $vars['data']['years'] !== 0 ) {
+			echo $vars['data']['years'] . " years, ";
+		}
+		
+		if( $vars['data']['months'] !== 0 ) {
+			echo $vars['data']['months'] . " months, ";
+		}
+		
+		if( $vars['data']['days'] !== 0 ) {
+			echo $vars['data']['days'] . " days";
+		}
+		echo '<hr>';
+		echo "Total days: " . $vars['data']['total_days'];
+	}
+
+
+	
+} else { ?>
+	<p class="text-danger">
+		<?= $vars['data']['message'] ?>
+	</p>
+<?php } ?>
