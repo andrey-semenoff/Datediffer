@@ -85,7 +85,7 @@ class App {
 					}
 
 					if( $this->months > 1 ) {
-						for( $i = $date_from['month'] + 1; $i <= $this->months; $i++ ) {
+						for( $i = $date_from['month'] + 1; $i < $date_to['month']; $i++ ) {
 							$this->total_days += $this->get_month_days($i, $date_from['year']);
 						}
 					}
