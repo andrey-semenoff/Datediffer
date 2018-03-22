@@ -28,7 +28,7 @@ class App {
 	// true — если дата старта > дата конца
 	private $invert = false;
 
-	function __construct(string $date_start, string $date_end) {
+	function __construct($date_start, $date_end) {
 		$this->date_start = $this->parseString($date_start);
 		$this->date_end = $this->parseString($date_end);
 		$this->datediff();
@@ -36,10 +36,10 @@ class App {
 
 	/**
 	 * Parse string to date parts
-	 * @param string $string 
+	 * @param string
 	 * @return array
 	 */
-	public function parseString(string $string) {
+	public function parseString($string) {
 		
 		$date_array = preg_split('/\D/', $string);
 

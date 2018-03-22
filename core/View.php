@@ -16,9 +16,9 @@ class View {
 	 * @param string 
 	 * @return string
 	 */
-	public function render(string $template, $vars) {
+	public function render($template, $vars) {
 
-		$path = $this->template_path . '/' . $template;
+		$path = $_SERVER['DOCUMENT_ROOT'] . $this->template_path . '/' . $template;
 
 		if( file_exists($path) ) {
 			ob_start();

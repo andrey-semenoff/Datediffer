@@ -8,7 +8,7 @@ class Base {
 	protected $config;
 	protected $view;
 	
-	function __construct(array $config)
+	function __construct($config)
 	{
 		$this->config = $config;
 		$this->view = new View($this->config);
@@ -16,7 +16,6 @@ class Base {
 
 	/**
 	 * Runs application
-	 * @return type
 	 */
 	function run() {
 		if( !empty($_POST) ) {

@@ -1,11 +1,10 @@
 <?php
+$config = parse_ini_file('config.ini', true);
 
-define(CONFIG, parse_ini_file('config.ini', true));
+require_once(__DIR__ . $config['path']['helpers'] . "/library.php");
 
-require_once(CONFIG['path']['helpers'] . "/library.php");
+autoloader(__DIR__ . $config['path']['core']);
 
-autoloader(CONFIG['path']['core']);
-
-$base = new Base(CONFIG);
+$base = new Base($config);
 
 $base->run();
